@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styling.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: monospace;
+            background-color: #000000;
+            color: white;
+            line-height: 1.6;
+        }
+        /* Serero Mokwena text styling */
+        @font-face{
+                font-family: 'MrDafoe';
+                src: url(fonts/MrDafoe-Regular.ttf);
+            }
+            #serero{
+            color: rgb(208, 0, 255);
+            font-family: "MrDafoe";
+            
+        }
+
+        @media (max-width: 768px){
+            body{
+                background-color: black;
+                margin: 0;
+                padding: 0;
+            }
+            .links {
+        display: none; /* Hide the links on mobile */
+         }
+         .remove-text2{
+                display: none;
+            }
+            .remove-txt{
+                display: none;
+            }
+            .left-intro{
+                float: left;
+            }
+            .hamburger{
+                align-items: end;
+                padding-top: 0.3em;
+            }
+            nav{
+                padding-bottom: 0.3em;
+                border-bottom: solid 2px white;
+            }
+            .left .links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            p{
+                margin-top: 45%;
+            }
+        }
+        p{
+            border: solid 1px orange;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            background-color: orange;
+            color: #000000;
+            font-size: xx-large;
+            margin-top: 20%;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="left" id="serero">
+            <div class="left-intro" id="serero">
+                <span class="remove-txt" id="remove-text2">***</span><span class="remove-text2">Mokwena</span> <span>Serero</span><span class="remove-txt" >***</span>
+        </div>
+            </div>
+        <div class="links">
+            <a href="homePage.html" id="bar">Home</a>
+            <a href="About.html" id="bar">About</a>
+            <a href="projects.html" id="bar">Projects</a>
+            <a href="homePage.html" id="bar">Contact</a>
+        </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    </nav>
+
+    <!-- Dropdown menu for mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="homePage.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        </div>
+
+<div class="warning-message">
+    <p>This section of the website is still under development and will run ASAP.</p>
+</div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        function toggleOffCanvas() {
+            const offCanvas = document.getElementById('offCanvas');
+            offCanvas.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

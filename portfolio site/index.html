@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        @font-face{
+                font-family: 'MrDafoe';
+                src: url(fonts/MrDafoe-Regular.ttf);
+            }
+            @font-face{
+                font-family: 'honk';
+                src: url(fonts/Honk-Regular.ttf);
+            }
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        #headerCover{
+            padding-top: 1.5em;
+            margin-right: 1.5em;
+            margin-left: 1.5em;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #HheaderName{
+            float: left;
+            margin-right: 20em;
+            font-family: MrDafoe;
+            font-size: 1.5em;
+        }
+        #serero{
+            color: rgb(28, 97, 124);
+            font-family: honk;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+        }
+        #boxIntro{
+            width: 49%;
+            float: right;
+        }
+        html{
+            min-height: 100%;
+            overflow: hidden;
+        }
+        #professinIntro{
+            padding-left: 2em;
+            display: inline-block;
+            margin: 10%;
+        }
+        #nameIntro{
+            overflow: hidden;
+            font-weight: 700;
+            font-size: 3em;
+            border-right: 1px solid white;
+            white-space: nowrap;
+            width: 0;
+            
+            animation: typing 8s steps(40, end) 1s infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+        #devInfo{
+            font-size: 20px;
+            padding: 1.5em;
+            padding-top: 2em;
+            border: solid 2px white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 6px rgb(28, 97, 124);
+            margin-left: none;
+            margin-right: 15px;
+        }
+        #HomeImage{
+            width: 49%;
+            text-align: center;
+            padding-top: 4em;
+        }
+        #imgCircle{
+            width: 40em;
+            border-radius: 30em;
+            height: 40em;
+            border: solid 1px white;
+            padding: 8px;
+            box-shadow: 0px 0px 10px 6px rgb(28, 97, 124);
+        }
+        #btContact{
+            margin-top: 2em;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+            border: solid 2px white;
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+        }
+        #btContact:hover{
+            border: solid 2px white;
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 6px rgb(28, 97, 124);
+        } 
+    </style>
+    <title>Serero</title>
+</head>
+<body>
+    <div id="headerCover">
+        <p id="HheaderName"><span id="serero">***</span><span style="color: rgb(28, 97, 124);">Mokwena</span> Serero<span id="serero">***</span></p>
+        <ul id="headerOptions">
+            <li>Home</li>
+            <li>About</li>
+            <li>Project</li>
+            <li>Contact Me</li>
+        </ul>
+    </div>
+    <div id="boxIntro">
+        <div id="professinIntro">
+            <p id="nameIntro">Serero Mokwena <br>Software Developer</p>
+        </div>
+        <div id="devInfo">
+            <p>
+                <!--add some information-->
+                <img src="images\IMG-20250114-WA0013(1)-transformed.png" alt="image nuot available">
+            </p>
+            <p class="lead text center"></p>
+    <div id="HomeImage">
+        <div >
+            <img id="imgCircle" src="istockphoto-1371243420-170667a (1).jpg" alt="img not available">
+        </div>
+        <button id="btContact">Contact Me</button>
+    </div>
+
+    <!--About section-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
