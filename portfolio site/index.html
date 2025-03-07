@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styling.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face{
+                font-family: 'MrDafoe';
+                src: url(fonts/MrDafoe-Regular.ttf);
+            }
+
+        body {
+            font-family: monospace;
+            background-color: #000000;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 0px;
+            padding: 20px;
+        }
+
+        .left-container {
+            margin-top: 60px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .right-container {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .left-container h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .left-container p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .resume-btn {
+            margin-top: 1.5em;
+            top: 50%;
+            left: 50%;
+            margin-left: 10em;
+            transform: translate(-50%,-50%);
+            background-color: #000000;
+            color: rgb(208, 0, 255);
+            padding: 10px 20px;
+            border: 2px solid rgb(247, 247, 247);
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            overflow: hidden;
+            border-radius: 3em;
+            box-shadow: 0 0 5px rgb(208, 0, 255),
+                        0 0 15px rgb(208, 0, 255),
+                        0 0 50px rgb(208, 0, 255);
+        }
+        .resume-btn:before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgb(208, 0, 255);
+            z-index: -1;
+            transform-origin: bottom right;
+            transform: rotate(-90deg);
+            transition: 0.5s;
+            
+        }
+        .resume-btn:hover::before {
+            transform: rotate(0deg);
+        }
+        .resume-btn:hover{
+            color: white;
+        }
+        .right-container{
+            width: 70%;
+            object-fit: cover;
+        }
+        .right-container p {
+            margin-top: 0px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        .picture{
+            width: 40em;
+        }
+        /* Dropdown menu for mobile view */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            width: 200px;
+            height: 100%;
+            padding-top: 60px;
+            z-index: 101;
+        }
+
+        .dropdown-menu a {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #555;
+        }
+
+        /* Show dropdown when the menu is toggled */
+        .dropdown-menu.active {
+            display: flex;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            body{
+                background-color: black;
+                margin: 0;
+                padding: 0;
+            }
+            .links {
+        display: none; /* Hide the links on mobile */
+         }
+    
+         .remove-text2{
+                display: none;
+            }
+            .remove-txt{
+                display: none;
+            }
+
+
+            .left-intro{
+                float: left;
+            }
+            .hamburger{
+                align-items: end;
+                padding-top: 0.3em;
+            }
+            nav{
+                padding-bottom: 0.3em;
+                border-bottom: solid 2px white;
+            }
+            .left .links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+            .mobile-menu a {
+                margin: 20px 0;
+                color: white;
+                font-size: 24px;
+                text-decoration: none;
+            }
+            .resume-btn{
+                margin-left: 8em;
+                margin-right: 0%;
+                padding-right: 35px;
+                padding-left: 35px;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-container, .right-container {
+                width: 80%;
+                text-align: center;
+            }
+
+            .right-container img {
+                width: 90%;
+            }
+        }
+
+
+            
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="left" id="serero">
+            <div class="left-intro" id="serero">
+                <span class="remove-txt" id="remove-text2">***</span><span class="remove-text2">Mokwena</span> Serero<span class="remove-txt" >***</span>
+        </div>
+            </div>
+        <div class="links">
+            <a href="index.html" id="bar">Home</a>
+            <a href="About.html" id="bar">About</a>
+            <a href="projects.html" id="bar">Projects</a>
+            <a href="#contact" id="bar" class="open-canvas-btn" onclick="toggleOffCanvas()">Contact</a>
+        </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    </nav>
+
+    <!-- Dropdown menu for mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Left container -->
+        <div class="left-container">
+            <h1 class="c#-intro">Full Stack C# Software Developer</h1>
+            <p>As a full stack C# developer, I work extensively with a variety of technologies within the .NET ecosystem. My expertise spans:</p>
+            <ul>
+                <li>.NET</li>
+                <li>.NET Core</li>
+                <li>.NET Framework</li>
+            </ul>
+            <p>I build dynamic web applications, desktop software, and mobile solutions, leveraging the power and flexibility of C#.</p>
+            <button class="resume-btn" onclick="window.location.href='cv.pdf'">Download Resume</button>
+            <!--<p>Welcome to the lab</p>-->
+        </div>
+
+        <!-- Right container -->
+        <div class="right-container">
+            <img class="picture" src="IMG-20250114-WA0019(1)-transformed (1).png" alt="Your Image" />
+        </div>
+    </div>
+
+
+    <div class="off-canvas" id="offCanvas">
+        
+        <h1 style="font-weight: bold;font-family: 'MrDafoe';">LET'S COOK</h3>
+
+        <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
+            <p>Please type in in your Name:</p>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <p>Email Address:</p>
+            <input type="email" class="form-input" placeholder="Your Email" required>
+            <p>Lets connect:</p>
+            <textarea class="form-input" placeholder="Your Message" required></textarea>
+            <p style="color: rgb(32, 31, 31);">Click to send message:</p>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div>
+            <p>Find me at:</p>
+            <p>2 Donkin St <br>Port Elizabeth Central <br>Eastern Cape, 6001</p>
+        </div>
+        <button class="close-btn" onclick="toggleOffCanvas()">BACK</button>
+    </div>
+
+    <script>
+
+            function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+         // Wait for the DOM to be ready and the elements to be loaded
+         //document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener to the hamburger menu
+            //const menuToggle = document.getElementById('menu-toggle');
+           // const offCanvasMenu = document.getElementById('dropdown-menu');
+
+           // menuToggle.addEventListener('click', function() {
+                // Toggle the 'show' class on the off-canvas menu
+             //   offCanvasMenu.classList.toggle('show');
+           // });
+       // });
+
+
+        //js for offcanvas contact button
+        function toggleOffCanvas() {
+            const offCanvas = document.getElementById('offCanvas');
+            offCanvas.classList.toggle('active');
+        }
+        
+        function sendEmail(event) {
+            event.preventDefault();
+            alert('Message sent! We will get back to you soon.');
+            toggleOffCanvas(); // Close the off-canvas after sending
+            document.getElementById("contactForm").reset(); // Reset the form
+        }
+    </script>
+</body>
+</html>
