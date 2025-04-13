@@ -222,6 +222,9 @@ h3 {
     p{
         text-align: center;
     }
+    navbar {
+        padding: 4px 0px;
+    }
     .close-btn {
         background-color: #f44336;
         color: white;
